@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="676.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.artycamp.gui.AjouterArticleController">
+   <children>
+      <Label layoutX="267.0" layoutY="406.0" prefHeight="21.0" prefWidth="100.0" text="Description" />
+      <Label alignment="TOP_RIGHT" layoutX="145.0" layoutY="366.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="21.0" prefWidth="107.0" text="Nom Article" />
+      <TextField fx:id="txtNomArticle" layoutX="235.0" layoutY="361.0" />
+      <Button layoutX="708.0" layoutY="608.0" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="31.0" prefWidth="86.0" text="Add" />
+      <TextArea fx:id="txtDescription" layoutX="355.0" layoutY="406.0" prefHeight="75.0" prefWidth="187.0" />
+      <ComboBox fx:id="cb_category" layoutX="355.0" layoutY="496.0" prefHeight="31.0" prefWidth="187.0" promptText="Categorie" />
+      <Button layoutX="599.0" layoutY="608.0" mnemonicParsing="false" onAction="#onClickReset" prefHeight="31.0" prefWidth="86.0" text="reset" />
+      <TableView fx:id="ta_table" layoutX="95.0" layoutY="116.0" prefHeight="200.0" prefWidth="740.0">
+        <columns>
+            <TableColumn fx:id="col_categorie" prefWidth="97.0" text="Categorie" />
+            <TableColumn fx:id="col_NomArticle" prefWidth="106.0" text="NomArticle" />
+            <TableColumn fx:id="col_Description" prefWidth="243.0" text="Description" />
+            <TableColumn fx:id="col_views" prefWidth="74.0" text="Views" />
+            <TableColumn fx:id="col_image" prefWidth="109.0" text="Image" />
+            <TableColumn fx:id="col_Action" prefWidth="109.0" text="Action" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSearch" layoutX="138.0" layoutY="65.0" promptText="Search by id" />
+      <Label alignment="TOP_RIGHT" layoutX="452.0" layoutY="366.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="21.0" prefWidth="107.0" text="Nom Image" />
+      <TextField fx:id="txt_image" layoutX="542.0" layoutY="361.0" />
+      <Text fx:id="t_erreur" fill="#e11717" layoutX="440.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="t_success" fill="#4fd372" layoutX="95.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
