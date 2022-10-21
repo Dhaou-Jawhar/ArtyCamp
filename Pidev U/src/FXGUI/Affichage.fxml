@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="566.0" prefWidth="1053.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXGUI.AffichageController">
+   <children>
+      <Text layoutX="37.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Affichage" wrappingWidth="171.87890625">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <TableView fx:id="affichage" layoutY="81.0" onMouseClicked="#getSelected" prefHeight="417.0" prefWidth="809.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="161.0" text="Nom" />
+            <TableColumn fx:id="prenom" prefWidth="150.0" text="prenom" />
+            <TableColumn fx:id="username" prefWidth="150.0" text="username" />
+            <TableColumn fx:id="role" prefWidth="176.0" text="role" />
+            <TableColumn fx:id="password" prefWidth="171.0" text="password" />
+        </columns>
+      </TableView>
+      <Button fx:id="update" layoutX="876.0" layoutY="433.0" mnemonicParsing="false" onAction="#modif" prefHeight="31.0" prefWidth="106.0" text="update" />
+      <Button fx:id="delete" layoutX="876.0" layoutY="467.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="106.0" text="delete" />
+      <TextField fx:id="Nomedit" layoutX="836.0" layoutY="135.0" />
+      <TextField fx:id="usernameedit" layoutX="836.0" layoutY="252.0" />
+      <TextField fx:id="prenomedit" layoutX="836.0" layoutY="194.0" />
+      <TextField fx:id="roleedit" layoutX="836.0" layoutY="305.0" />
+      <TextField fx:id="passwordedit" layoutX="836.0" layoutY="364.0" />
+      <Text layoutX="900.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom" />
+      <Text layoutX="902.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenom" />
+      <Text layoutX="897.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username" />
+      <Text layoutX="904.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="role" />
+      <Text layoutX="903.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" />
+      <Button fx:id="search" layoutX="877.0" layoutY="505.0" mnemonicParsing="false" onAction="#chercher" prefHeight="31.0" prefWidth="106.0" text="search" />
+   </children>
+</AnchorPane>
