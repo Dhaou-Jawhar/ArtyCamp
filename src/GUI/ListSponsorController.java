@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
@@ -53,6 +56,8 @@ public class ListSponsorController implements Initializable {
     private Button ex;
     @FXML
     private Label warning;
+    @FXML
+    private TextField rechsp;
 
     /**
      * Initializes the controller class.
@@ -70,6 +75,22 @@ public class ListSponsorController implements Initializable {
         ObservableList<Sponsor> list = es.getAll();
         
         Tsponsor.setItems(list);
+        FilteredList<Sponsor> filteredData = new FilteredList<>(list, b -> true);
+        rechsp.textProperty().addListener((observable, oldValue, newValue) -> {
+          filteredData.setPredicate(cp-> {
+              if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+              String lowerCaseFilter = newValue.toLowerCase();
+              if (cp.getNom_societe().toLowerCase().contains(lowerCaseFilter) ) {
+                    return true; // Filter matches first name.
+                    }
+                return false;
+       });
+    });
+        SortedList<Sponsor> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(Tsponsor.comparatorProperty());
+        Tsponsor.setItems(sortedData);
     }    
 
     @FXML
@@ -132,7 +153,7 @@ public class ListSponsorController implements Initializable {
 
     @FXML
     private void exit(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListEvent.fxml")) ;
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/Acceuil.fxml")) ;
             Scene rcScene= new Scene(root);
             Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
             window.setScene(rcScene);

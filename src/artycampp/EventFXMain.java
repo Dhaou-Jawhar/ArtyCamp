@@ -25,7 +25,7 @@ public class EventFXMain extends Application {
     @Override
     
     public void start(Stage primaryStage) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/ListEvent.fxml"));
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/Acceuil.fxml"));
        Parent root =loader.load();
        Scene scene = new Scene(root);
        primaryStage.setScene(scene);
@@ -39,10 +39,7 @@ public class EventFXMain extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
-    
-
-
+   
     
 }
 

@@ -37,6 +37,11 @@ public class Event {
         this.dateDeb = dateDeb;
         this.dateFin = dateFin;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" + "nomEv=" + nomEv + ", description=" + description + ", dateDeb=" + dateDeb + ", dateFin=" + dateFin + '}'+"\n";
+    }
      public Event(int id) {
         this.id = id;
         

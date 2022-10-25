@@ -89,12 +89,14 @@ public class Sponsor {
         this.event = event;
     }
     */
-    
 
     @Override
     public String toString() {
-        return "Sponsor{" + "nom_societe=" + nom_societe + ", email_societe=" + email_societe + '}';
+        return "Sponsor{" + "phone_societe=" + phone_societe + ", montant=" + montant + ", nom_societe=" + nom_societe + ", email_societe=" + email_societe + '}'+"\n";
     }
+    
+
+
         
         
     

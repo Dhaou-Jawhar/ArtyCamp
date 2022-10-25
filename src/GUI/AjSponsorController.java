@@ -10,6 +10,7 @@ import Services.SponsorService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,7 +69,23 @@ public class AjSponsorController implements Initializable {
             window.show();
     }
     
+    
+    @FXML
+    public boolean validateEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            return false;
+        }
+        //^ : it starst with
+        //+ : at least one
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +"[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        if (pattern.matcher(email).matches()) {
+            return true;
+        } 
+        return false;
+    }
 
+    
     @FXML
     private void ajoutSp(ActionEvent event) throws IOException {
          /*if(chnom.getText().isEmpty() || chemail.getText().isEmpty()|| chmont.getText()).isEmpty()|| chtel.getText().isEmpty())
@@ -81,6 +98,16 @@ public class AjSponsorController implements Initializable {
             try {
             System.out.println(Integer.parseInt(chtel.getText()));
             SponsorService s = new SponsorService();
+            
+            //controle de saisie
+            
+            boolean isValid = validateEmail(chemail.getText());
+            if(!isValid)
+            {
+                                warning.setText("Email non valide");
+
+                throw new Exception("Email non valide");
+            }
             s.ajouter(new Sponsor(Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
             JOptionPane.showMessageDialog(null,"Sponsor ajouté avec succés");
 

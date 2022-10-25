@@ -18,7 +18,7 @@ public interface IService<T> {
     public void ajouter(T t);
     public void modifier(T t);
     public void supprimer(T t);
-   // public T getOne(int id);
+    public T getOne(int id);
     public ObservableList<T> getAll();
     
 }

@@ -69,13 +69,15 @@ public class SponsorService implements IService<Sponsor> {
         }
     }
 
-   /*@Override
+   @Override
     public Sponsor getOne(int id_sponsor) {
        Sponsor s= new Sponsor();
+       String req ="SELECT * FROM sponsor WHERE id_sponsor="+id_sponsor;
         try {
-            PreparedStatement d = this.cnx.prepareStatement("SELECT * FROM sponsor WHERE id_sponsor=?");
-            d.setInt (1,id_sponsor);
-            ResultSet rs= d.executeQuery();
+            Statement st = cnx.createStatement(); 
+            
+            ResultSet rs = st.executeQuery(req);
+
             while (rs.next()) {
                 s.setId_sponsor(rs.getInt("id_sponsor"));
                 s.setPhone_societe(rs.getInt("phone_societe"));
@@ -83,14 +85,14 @@ public class SponsorService implements IService<Sponsor> {
                 s.setNom_societe(rs.getString("nom_societe"));
                 s.setEmail_societe(rs.getString("email_societe"));
                 
-                
+                System.out.println(s);
             }
                 
         } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
         }
      return s;    
-    }*/
+    }
     
 
     @Override
@@ -121,7 +123,11 @@ public class SponsorService implements IService<Sponsor> {
         return listsponsor;
     }
 
+   public int nbreOfSponsors(String pk){
    
+       
+       return 0;
+   }
 
 
    

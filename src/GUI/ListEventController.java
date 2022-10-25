@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
@@ -45,8 +48,13 @@ public class ListEventController implements Initializable {
     private TableColumn<Event, String> cff;
     @FXML
     private TableColumn<Event, String> cdesc;
+    
     @FXML
-    private Button gospo;
+    private Button goacc;
+    @FXML
+    private TextField rechev;
+    @FXML
+    private Label empty;
 
     /**
      * Initializes the controller class.
@@ -57,13 +65,40 @@ public class ListEventController implements Initializable {
         
         cnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nomEv"));
         cdesc.setCellValueFactory(new PropertyValueFactory<Event, String>("description"));
-        cdd.setCellValueFactory(new PropertyValueFactory<Event, String>("dateFin"));
-        cff.setCellValueFactory(new PropertyValueFactory<Event, String>("dateDeb"));
+        cdd.setCellValueFactory(new PropertyValueFactory<Event, String>("dateDeb"));
+        cff.setCellValueFactory(new PropertyValueFactory<Event, String>("dateFin"));
+        setLblsomme(Integer.toString(es.Total()));
+        
         
         
         ObservableList<Event> list = es.getAll();
         
         TEvent.setItems(list);
+        
+        
+        FilteredList<Event> filteredData = new FilteredList<>(list, b -> true);
+        rechev.textProperty().addListener((observable, oldValue, newValue) -> {
+          filteredData.setPredicate(cp-> {
+              if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+              String lowerCaseFilter = newValue.toLowerCase();
+              if (cp.getNomEv().toLowerCase().contains(lowerCaseFilter) ) {
+                    return true; // Filter matches first name.
+                    
+                } else if (cp.getDateDeb().toLowerCase().contains(lowerCaseFilter) ){
+                    return true; // Filter matches date deb.
+                } else if (cp.getDateFin().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; 
+                    } else if (cp.getDescription().toLowerCase().contains(lowerCaseFilter) ){
+                             return true;
+                    }
+                return false;
+       });
+    });
+        SortedList<Event> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(TEvent.comparatorProperty());
+        TEvent.setItems(sortedData);
     }    
 
     @FXML
@@ -125,17 +160,17 @@ public class ListEventController implements Initializable {
     }
 
     @FXML
-    private void Go(ActionEvent event) throws IOException {
-        gospo.getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListSponsor.fxml")) ;
+    private void Goback(ActionEvent event) throws IOException {
+        goacc.getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/Acceuil.fxml")) ;
         Scene rcScene= new Scene(root);
         Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
     	window.setScene(rcScene);
     	window.show();
-        
-        
-        
     }
     
+    public void setLblsomme(String empty){
+      this.empty.setText(empty);
+    }
 
 }

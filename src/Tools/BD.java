@@ -12,9 +12,13 @@ public class BD {
     private Connection cnx;
     private static BD instance;
     
-    private String url = "jdbc:mysql://remotemysql.com:3306/tcPmjQHMA8";
-    private String user = "tcPmjQHMA8";
-    private String password = "cHyEAAZjdg";
+    
+    private String url =  "jdbc:mysql://localhost/esprit";
+    private String user = "root";
+    private String password = "";
+    //private String url = "jdbc:mysql://remotemysql.com:3306/tcPmjQHMA8";
+    //private String user = "tcPmjQHMA8";
+    //private String password = "cHyEAAZjdg";
     
     
     
