@@ -23,7 +23,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -104,12 +108,19 @@ public class AjSponsorController implements Initializable {
             boolean isValid = validateEmail(chemail.getText());
             if(!isValid)
             {
-                                warning.setText("Email non valide");
+            warning.setText("Email non valide");
 
-                throw new Exception("Email non valide");
+                //throw new Exception("Email non valide");
             }
             s.ajouter(new Sponsor(Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
-            JOptionPane.showMessageDialog(null,"Sponsor ajouté avec succés");
+            //JOptionPane.showMessageDialog(null,"Sponsor ajouté avec succés");
+            TrayNotification tray = new TrayNotification();
+              AnimationType type = AnimationType.POPUP;
+              tray.setAnimationType(type);
+              tray.setTitle("Confirmation");
+              tray.setMessage("Sponsor ajouté avec succés");
+              tray.setNotificationType(NotificationType.SUCCESS);
+              tray.showAndDismiss(Duration.millis(3000));
 
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListSponsor.fxml")) ;
             Scene rcScene= new Scene(root);

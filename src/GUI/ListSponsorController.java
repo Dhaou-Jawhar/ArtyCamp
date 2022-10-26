@@ -27,7 +27,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -137,14 +141,20 @@ public class ListSponsorController implements Initializable {
             SponsorService es = new SponsorService();
             
             es.supprimer(new Sponsor(E.getId_sponsor()));
-            JOptionPane.showMessageDialog(null,"Êtes-vous sûr de vouloir supprimer?");
-
+            //JOptionPane.showMessageDialog(null,"Êtes-vous sûr de vouloir supprimer?");
+            TrayNotification tray = new TrayNotification();
+              AnimationType type = AnimationType.POPUP;
+              tray.setAnimationType(type);
+              tray.setTitle("Confirmation");
+              tray.setMessage("Sponsor supprimé avec succés");
+              tray.setNotificationType(NotificationType.SUCCESS);
+              tray.showAndDismiss(Duration.millis(3000));
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListSponsor.fxml")) ;
             Scene rcScene= new Scene(root);
             Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
             window.setScene(rcScene);
             window.show();
-            JOptionPane.showMessageDialog(null,"Sponsor supprimé avec succés");
+            //JOptionPane.showMessageDialog(null,"Sponsor supprimé avec succés");
             
         }catch(Exception ex) {
          warning.setText("Selectionnez un Sponsor");

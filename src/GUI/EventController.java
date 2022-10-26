@@ -23,7 +23,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -59,7 +63,14 @@ public class EventController implements Initializable {
          EventService s = new EventService();
 
                 s.ajouter(new Event(chnom.getText(),chdesc.getText(),chdd1.getValue().toString(),chdf1.getValue().toString()));
-                JOptionPane.showMessageDialog(null,"Event ajouté avec succés");
+                //JOptionPane.showMessageDialog(null,"Event ajouté avec succés");
+                TrayNotification tray = new TrayNotification();
+              AnimationType type = AnimationType.POPUP;
+              tray.setAnimationType(type);
+              tray.setTitle("Confirmation");
+              tray.setMessage("Evenement ajouté avec succés");
+              tray.setNotificationType(NotificationType.SUCCESS);
+              tray.showAndDismiss(Duration.millis(3000));
 
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListEvent.fxml")) ;
             Scene rcScene= new Scene(root);

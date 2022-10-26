@@ -20,7 +20,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -66,7 +70,15 @@ public class ModSponsorController implements Initializable {
             System.out.println(Integer.parseInt(chtel.getText()));
             SponsorService s = new SponsorService();
             s.modifier(new Sponsor(ID,Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
-            JOptionPane.showMessageDialog(null,"Sponsor modifié avec succés");
+            //JOptionPane.showMessageDialog(null,"Sponsor modifié avec succés");
+            TrayNotification tray = new TrayNotification();
+              AnimationType type = AnimationType.POPUP;
+              tray.setAnimationType(type);
+              tray.setTitle("Confirmation");
+              tray.setMessage("Sponsor modifié avec succés");
+              tray.setNotificationType(NotificationType.SUCCESS);
+              tray.showAndDismiss(Duration.millis(3000));
+              
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListSponsor.fxml")) ;
             Scene rcScene= new Scene(root);
             Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();

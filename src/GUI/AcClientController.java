@@ -164,7 +164,7 @@ public class AcClientController implements Initializable {
                        ItemController item = loader.getController();
                        item.setData(modls.get(i),mylistener);
                        if (column==3) {
-                           column  =0;
+                           column=0;
                            row++;
                        
                        }
