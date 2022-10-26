@@ -57,8 +57,8 @@ public class ModEventController implements Initializable {
         chdesc.setText(S.getDescription());
         chdd.setText(S.getDateDeb());
         chdf.setText(S.getDateFin());
-     
     }
+     
     @FXML
     private void modifEv(ActionEvent event) throws IOException {
         EventService es = new EventService();

@@ -83,11 +83,13 @@ public class ListEventController implements Initializable {
                     return true;
                 }
               String lowerCaseFilter = newValue.toLowerCase();
+              // Filter matches first name.
               if (cp.getNomEv().toLowerCase().contains(lowerCaseFilter) ) {
-                    return true; // Filter matches first name.
-                    
+                    return true; 
+                    // Filter matches date deb.
                 } else if (cp.getDateDeb().toLowerCase().contains(lowerCaseFilter) ){
-                    return true; // Filter matches date deb.
+                    return true; 
+                 
                 } else if (cp.getDateFin().toLowerCase().contains(lowerCaseFilter)) {
                     return true; 
                     } else if (cp.getDescription().toLowerCase().contains(lowerCaseFilter) ){
