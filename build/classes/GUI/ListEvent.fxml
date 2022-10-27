@@ -5,26 +5,66 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="1248.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ListEventController">
+<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="1248.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ListEventController">
    <children>
-      <TableView id="table-view" fx:id="TEvent" layoutX="135.0" layoutY="92.0" prefHeight="232.0" prefWidth="1039.0">
+      <TableView id="table-view" fx:id="TEvent" layoutX="332.0" layoutY="93.0" prefHeight="277.0" prefWidth="848.0">
          <columns>
-            <TableColumn fx:id="cnom" prefWidth="187.0" text="Nom Evenement" />
-            <TableColumn fx:id="cdesc" prefWidth="491.0" text="Déscription" />
-            <TableColumn fx:id="cdd" minWidth="0.0" prefWidth="182.0" text="Date début" />
-            <TableColumn fx:id="cff" prefWidth="178.0" text="Date Fin" />
+            <TableColumn fx:id="cnom" prefWidth="218.0" text="Nom Evenement" />
+            <TableColumn fx:id="cdesc" prefWidth="276.0" text="Déscription" />
+            <TableColumn fx:id="cdd" minWidth="0.0" prefWidth="178.0" text="Date début" />
+            <TableColumn fx:id="cff" prefWidth="177.0" text="Date Fin" />
          </columns>
       </TableView>
-      <Button layoutX="586.0" layoutY="387.0" mnemonicParsing="false" onAction="#Modifier" styleClass="UpperMenu" text="Modifier" />
-      <Button layoutX="845.0" layoutY="387.0" mnemonicParsing="false" onAction="#Delete" styleClass="btn" text="Supprimer" />
-      <Button layoutX="317.0" layoutY="387.0" mnemonicParsing="false" onAction="#Ajouter" styleClass="btn" text="Ajouter" />
-      <Label fx:id="warning" layoutX="536.0" layoutY="349.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
-      <Button fx:id="goacc" layoutX="586.0" layoutY="474.0" mnemonicParsing="false" onAction="#Goback" prefHeight="37.0" prefWidth="77.0" styleClass="btn" text="Exit" />
-      <Label layoutX="924.0" layoutY="31.0" prefHeight="21.0" prefWidth="89.0" text="Recherche" />
-      <TextField fx:id="rechev" layoutX="1013.0" layoutY="26.0" />
-      <Label layoutX="189.0" layoutY="31.0" prefHeight="21.0" prefWidth="164.0" text="Nbre des évènements:" />
-      <Label fx:id="empty" layoutX="343.0" layoutY="31.0" />
+      <Button layoutX="748.0" layoutY="410.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="89.0" styleClass="UpperMenu" stylesheets="@../SCSS/fxml.css" text="Modifier" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font></Button>
+      <Button layoutX="938.0" layoutY="410.0" mnemonicParsing="false" onAction="#Delete" prefHeight="37.0" prefWidth="105.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Supprimer" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="16.0" />
+         </font></Button>
+      <Button layoutX="552.0" layoutY="410.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="37.0" prefWidth="96.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Ajouter" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="16.0" />
+         </font></Button>
+      <Label fx:id="warning" layoutX="687.0" layoutY="378.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
+      <Button fx:id="goacc" layoutX="756.0" layoutY="483.0" mnemonicParsing="false" onAction="#Goback" prefHeight="31.0" prefWidth="70.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="17.0" />
+         </font></Button>
+      <Label layoutX="924.0" layoutY="31.0" prefHeight="21.0" prefWidth="89.0" text="Recherche" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="18.0" />
+         </font></Label>
+      <TextField fx:id="rechev" layoutX="1013.0" layoutY="26.0" promptText="Tapez ici" styleClass="search-box2" stylesheets="@../SCSS/fxml.css" />
+      <Label layoutX="343.0" layoutY="31.0" prefHeight="25.0" prefWidth="221.0" text="Nbre des événements:">
+         <font>
+            <Font name="Bodoni MT" size="20.0" />
+         </font></Label>
+      <Label fx:id="empty" layoutX="543.0" layoutY="25.0" prefHeight="37.0" prefWidth="37.0" />
+      <Pane prefHeight="541.0" prefWidth="265.0" style="-fx-background-color: #905E96;">
+         <children>
+            <ImageView fitHeight="84.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SCSS/logo.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <ImageView fitHeight="48.0" fitWidth="47.0" layoutX="872.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SCSS/find.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="59.0" layoutX="296.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SCSS/calcul.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

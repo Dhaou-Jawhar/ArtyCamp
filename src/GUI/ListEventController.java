@@ -106,7 +106,8 @@ public class ListEventController implements Initializable {
         sortedData.comparatorProperty().bind(TEvent.comparatorProperty());
         TEvent.setItems(sortedData);
     }    
-
+ 
+    /********************************************************/
     @FXML
     private void Modifier(ActionEvent event) {
         try {
@@ -130,6 +131,7 @@ public class ListEventController implements Initializable {
 	}
     }
 
+    /********************************************************/
     @FXML
     private void Delete(ActionEvent event) {
         try {
@@ -157,6 +159,7 @@ public class ListEventController implements Initializable {
         }  
     }
 
+    /********************************************************/
     @FXML
     private void Ajouter(ActionEvent event) {
         try {
@@ -171,6 +174,7 @@ public class ListEventController implements Initializable {
 	}   
     }
 
+    /********************************************************/
     @FXML
     private void Goback(ActionEvent event) throws IOException {
         goacc.getScene().getWindow().hide();

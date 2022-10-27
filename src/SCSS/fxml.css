@@ -18,3 +18,22 @@
     -fx-background-radius: 30;
     
 }
+.button{
+   -fx-background-color:#D3D3D3;
+    -fx-background-radius: 30; 
+}
+
+.search-box1{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.search-box2{
+    -fx-background-color:#D3D3D3;
+    -fx-background-radius: 100;
+}
+.search-box3{
+    -fx-background-color:#DCDCDC;
+    -fx-background-radius: 100;
+}
+

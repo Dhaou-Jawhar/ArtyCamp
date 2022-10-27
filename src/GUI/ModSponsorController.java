@@ -54,6 +54,7 @@ public class ModSponsorController implements Initializable {
         
     }    
 
+    /********************************************************/
     void init(Sponsor S) {
         ID = S.getId_sponsor();
         chtel.setText(Integer.toString(S.getPhone_societe()));
@@ -62,6 +63,7 @@ public class ModSponsorController implements Initializable {
         chemail.setText(S.getEmail_societe());
     }
 
+    /********************************************************/
     @FXML
     private void modifier(ActionEvent event) {
              try {
@@ -91,7 +93,8 @@ public class ModSponsorController implements Initializable {
          warning.setText("Doit etre de type entier");
             }
     }
-
+    
+    /********************************************************/
     @FXML
     private void exit(ActionEvent event)  throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListSponsor.fxml")) ;

@@ -38,8 +38,9 @@ public class AcceuilController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    }
+    
+    /********************************************************/
     @FXML
     private void gotoevent(ActionEvent event) throws IOException {
         gte.getScene().getWindow().hide();
@@ -50,6 +51,7 @@ public class AcceuilController implements Initializable {
     	window.show();
     }
 
+    /********************************************************/
     @FXML
     private void gotosponsor(ActionEvent event) throws IOException  {
         
@@ -59,10 +61,6 @@ public class AcceuilController implements Initializable {
         Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
     	window.setScene(rcScene);
     	window.show();
-        
-        
-        
-    
     }
 
     @FXML

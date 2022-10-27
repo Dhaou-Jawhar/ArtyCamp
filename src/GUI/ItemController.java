@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
  *
  * @author Ben Nasr
  */
+/********************************************************/
 public class ItemController implements Initializable {
 
     @FXML
@@ -41,12 +42,13 @@ public class ItemController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /********************************************************/
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
-    
+    /********************************************************/
     void setData(Evmodl evmodl, MyListener mylistener) {
         this.evmodl=evmodl;
         this.mylistener=mylistener;

@@ -5,11 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="433.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.AjSponsorController">
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjSponsorController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="475.0" prefWidth="437.0">
          <children>
@@ -30,19 +32,64 @@
             <DatePicker fx:id="chdf1" layoutX="149.0" layoutY="339.0" />
          </children>
       </AnchorPane>
-      <Pane prefHeight="489.0" prefWidth="462.0" style="-fx-background-color: beige;">
+      <Pane prefHeight="550.0" prefWidth="612.0" style="-fx-background-color: #FFFAF0;">
          <children>
-            <TextField fx:id="chnom" layoutX="157.0" layoutY="49.0" prefHeight="31.0" prefWidth="225.0" />
-            <Button layoutX="90.0" layoutY="403.0" mnemonicParsing="false" onAction="#ajoutSp" prefHeight="39.0" prefWidth="115.0" text="Ajouter" />
-            <Button layoutX="246.0" layoutY="403.0" mnemonicParsing="false" onAction="#Exit" prefHeight="39.0" prefWidth="115.0" text="Exit" />
-            <Label layoutX="53.0" layoutY="54.0" prefHeight="21.0" prefWidth="56.0" text="Nom :" />
-            <Label fx:id="warning" layoutX="132.0" layoutY="353.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
-            <Label layoutX="51.0" layoutY="214.0" text="Téléphone:" />
-            <TextField fx:id="chemail" layoutX="157.0" layoutY="127.0" prefHeight="31.0" prefWidth="225.0" />
-            <Label layoutX="51.0" layoutY="132.0" text="Email:" />
-            <Label layoutX="51.0" layoutY="292.0" text="Montant:" />
-            <TextField fx:id="chmont" layoutX="157.0" layoutY="287.0" prefHeight="31.0" prefWidth="225.0" />
-            <TextField fx:id="chtel" layoutX="157.0" layoutY="209.0" prefHeight="31.0" prefWidth="225.0" />
+            <TextField fx:id="chnom" layoutX="318.0" layoutY="76.0" prefHeight="31.0" prefWidth="225.0" styleClass="search-box2" stylesheets="@../SCSS/fxml.css" />
+            <Button layoutX="293.0" layoutY="403.0" mnemonicParsing="false" onAction="#ajoutSp" prefHeight="39.0" prefWidth="115.0" stylesheets="@../SCSS/fxml.css" text="Ajouter" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="452.0" layoutY="403.0" mnemonicParsing="false" onAction="#Exit" prefHeight="39.0" prefWidth="115.0" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Button>
+            <Label layoutX="196.0" layoutY="79.0" prefHeight="21.0" prefWidth="56.0" text="Nom :" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="warning" layoutX="331.0" layoutY="358.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
+            <Label layoutX="196.0" layoutY="225.0" text="Téléphone:" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="chemail" layoutX="318.0" layoutY="145.0" prefHeight="31.0" prefWidth="225.0" styleClass="search-box2" stylesheets="@../SCSS/fxml.css" />
+            <Label layoutX="196.0" layoutY="148.0" text="Email:" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="303.0" text="Montant:" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="chmont" layoutX="318.0" layoutY="298.0" prefHeight="31.0" prefWidth="225.0" styleClass="search-box2" stylesheets="@../SCSS/fxml.css" />
+            <TextField fx:id="chtel" layoutX="318.0" layoutY="220.0" prefHeight="31.0" prefWidth="225.0" styleClass="search-box2" stylesheets="@../SCSS/fxml.css" />
+            <Pane layoutY="-5.0" prefHeight="559.0" prefWidth="115.0" style="-fx-background-color: #905E96;" />
+            <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="134.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SCSS/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="134.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SCSS/mail.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="134.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SCSS/phone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="140.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SCSS/money.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

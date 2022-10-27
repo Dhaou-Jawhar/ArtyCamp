@@ -34,6 +34,7 @@ public class EventService implements IService<Event> {
         this.cnx = BD.getInstance().getCnx();
     }
 
+    /********************************************************/
     @Override
     public void ajouter(Event s) {
         try {
@@ -48,6 +49,7 @@ public class EventService implements IService<Event> {
 
     }
 
+    /********************************************************/
     @Override
     public void modifier(Event s) {
         try {
@@ -61,6 +63,7 @@ public class EventService implements IService<Event> {
 
     }
 
+    /********************************************************/
     @Override
     public void supprimer(Event s) {
         try {
@@ -74,6 +77,8 @@ public class EventService implements IService<Event> {
         }
 
     }
+    
+    /********************************************************/
 
     @Override
     public Event getOne(int id) {
@@ -101,6 +106,7 @@ public class EventService implements IService<Event> {
         return null;
     }
 
+    /********************************************************/
     @Override
     public ObservableList<Event> getAll() {
 
@@ -142,7 +148,7 @@ public class EventService implements IService<Event> {
     }
     
     
-
+/********************************************************/
     public Event GetEventById(int id) {
 
         String req = "SELECT * FROM event WHERE id="+id;
@@ -167,6 +173,8 @@ public class EventService implements IService<Event> {
         }
         return null;
     }
+    
+    /********************************************************/
     public Sponsor GetSponsorById(int id) {
         
         
@@ -194,6 +202,7 @@ public class EventService implements IService<Event> {
      return null;   
     }
     
+    /********************************************************/
         public ObservableList<Sponsor> GetEventSponsorById(int id)  {
             ObservableList<Sponsor> ls=FXCollections.observableArrayList();
             
@@ -226,6 +235,4 @@ public class EventService implements IService<Event> {
             return ls;
             
         }
-    
-
 }

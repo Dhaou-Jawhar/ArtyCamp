@@ -62,7 +62,8 @@ public class AjSponsorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+     
+    /********************************************************/
     @FXML
     private void Exit(ActionEvent event) throws IOException {
          
@@ -73,13 +74,13 @@ public class AjSponsorController implements Initializable {
             window.show();
     }
     
-    
+    /********************************************************/
     @FXML
     public boolean validateEmail(String email) {
         if (email == null || email.isEmpty()) {
             return false;
         }
-        //^ : it starst with
+        //^ : it starts with
         //+ : at least one
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +"[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(emailRegex);
@@ -89,13 +90,9 @@ public class AjSponsorController implements Initializable {
         return false;
     }
 
-    
+    /********************************************************/
     @FXML
     private void ajoutSp(ActionEvent event) throws IOException {
-         /*if(chnom.getText().isEmpty() || chemail.getText().isEmpty()|| chmont.getText()).isEmpty()|| chtel.getText().isEmpty())
-    {warning.setText("Remplissez tous les champs !!");
-    }
-    else */
     {
             try {
             System.out.println(Integer.parseInt(chmont.getText()));

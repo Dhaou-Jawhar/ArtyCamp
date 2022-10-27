@@ -14,10 +14,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -26,6 +31,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -50,8 +56,12 @@ public class AcClientController implements Initializable {
     private List<Evmodl> modls = new ArrayList<>();
     private Image image;
     private MyListener mylistener;
+    @FXML
+    private Button participer;
+    @FXML
+    private Button exEV;
     
-    
+    /********************************************************/
     private List<Evmodl> getData(){
     List<Evmodl> modls = new ArrayList<>();
      Evmodl md;
@@ -119,26 +129,21 @@ public class AcClientController implements Initializable {
       md.setColor("3c0e4a");
       modls.add(md);
       
-      
-    
     return modls;
     }
     
+    
+    /********************************************************/
     private void setChosenEvent (Evmodl md){
        nameEv.setText(md.getName());
        description.setText(md.getDescrip());
        image = new Image(getClass().getResourceAsStream( md.getImg()));
        iportrait.setImage(image);
        chosenEventCard.setStyle("-fx-background-color: #" + md.getColor()+"; \n" + "-fx-background-radius: 30;");
-       
-       
-    
-    
     }
     
-    /**
-     * Initializes the controller class.
-     */
+    
+    /********************************************************/
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         modls.addAll(getData());
@@ -190,7 +195,18 @@ public class AcClientController implements Initializable {
             
            
         }
-        
-    }    
+    /**************************************************/
+    @FXML
+     //Bouton t'hez interface where the artist gonna deploy his work fl event
+    private void GoToArtclEv(ActionEvent event) {
+    }
+    /**************************************************/
+    @FXML
+    //Bouton trajaa lel page eli 9bal
+    private void exitEVENT(ActionEvent event) {
+    }
+    /******************************************************************/
+    
+}    
     
 

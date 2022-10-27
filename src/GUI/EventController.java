@@ -55,6 +55,7 @@ public class EventController implements Initializable {
         
     }    
 
+    /********************************************************/
     @FXML
     private void ajoutEv(ActionEvent event) throws IOException {
         if(chnom.getText().isEmpty() || chdesc.getText().isEmpty()|| chdd1.getValue().toString().isEmpty()|| chdf1.getValue().toString().isEmpty())
@@ -81,6 +82,7 @@ public class EventController implements Initializable {
         
     }
 
+    /********************************************************/
     @FXML
     private void Exit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListEvent.fxml")) ;

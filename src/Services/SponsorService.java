@@ -29,6 +29,7 @@ public class SponsorService implements IService<Sponsor> {
         this.cnx = BD.getInstance().getCnx();
     }
 
+    /********************************************************/
     @Override
     public void ajouter(Sponsor s) {
        try {
@@ -43,6 +44,7 @@ public class SponsorService implements IService<Sponsor> {
         }
     }
 
+    /********************************************************/
     @Override
     public void modifier(Sponsor s) {
         try {
@@ -56,6 +58,7 @@ public class SponsorService implements IService<Sponsor> {
        
     }
     
+    /********************************************************/
     @Override
     public void supprimer(Sponsor s) {
          try {
@@ -69,6 +72,7 @@ public class SponsorService implements IService<Sponsor> {
         }
     }
 
+    /********************************************************/
    @Override
     public Sponsor getOne(int id_sponsor) {
        Sponsor s= new Sponsor();
@@ -95,6 +99,7 @@ public class SponsorService implements IService<Sponsor> {
     }
     
 
+    /********************************************************/
     @Override
     public ObservableList<Sponsor> getAll() {
          

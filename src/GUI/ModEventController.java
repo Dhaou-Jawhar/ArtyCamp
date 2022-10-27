@@ -33,6 +33,7 @@ import tray.notification.TrayNotification;
  *
  * @author Ben Nasr
  */
+ 
 public class ModEventController implements Initializable {
 
     @FXML
@@ -50,6 +51,7 @@ public class ModEventController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -63,6 +65,7 @@ public class ModEventController implements Initializable {
         chdf.setText(S.getDateFin());
     }
      
+     /********************************************************/
     @FXML
     private void modifEv(ActionEvent event) throws IOException {
         EventService es = new EventService();
@@ -83,6 +86,7 @@ public class ModEventController implements Initializable {
             window.show();
     }
 
+    /********************************************************/
     @FXML
     private void Exit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../GUI/ListEvent.fxml")) ;

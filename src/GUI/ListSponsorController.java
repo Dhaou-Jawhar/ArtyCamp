@@ -66,6 +66,8 @@ public class ListSponsorController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    /********************************************************/
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         SponsorService es = new SponsorService();
@@ -97,6 +99,7 @@ public class ListSponsorController implements Initializable {
         Tsponsor.setItems(sortedData);
     }    
 
+    /********************************************************/
     @FXML
     private void ajouter(ActionEvent event) {
         try {
@@ -111,6 +114,7 @@ public class ListSponsorController implements Initializable {
 	}   
     }
 
+    /********************************************************/
     @FXML
     private void modifier(ActionEvent event) {
         try {
@@ -134,6 +138,7 @@ public class ListSponsorController implements Initializable {
 	}
     }
 
+    /********************************************************/
     @FXML
     private void supp(ActionEvent event) {
         try {
@@ -161,6 +166,7 @@ public class ListSponsorController implements Initializable {
         }  
     }
 
+    /********************************************************/
     @FXML
     private void exit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../GUI/Acceuil.fxml")) ;
