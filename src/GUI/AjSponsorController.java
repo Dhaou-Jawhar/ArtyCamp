@@ -113,7 +113,6 @@ public class AjSponsorController implements Initializable {
             warning.setText("Email non valide");
             }else {
             s.ajouter(new Sponsor(Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
-            //JOptionPane.showMessageDialog(null,"Sponsor ajouté avec succés");
             TrayNotification tray = new TrayNotification();
               AnimationType type = AnimationType.POPUP;
               tray.setAnimationType(type);

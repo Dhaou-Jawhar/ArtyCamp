@@ -128,14 +128,53 @@ public class SponsorService implements IService<Sponsor> {
         return listsponsor;
     }
 
-   public int nbreOfSponsors(String pk){
+  /* public int nbreOfSponsors(String pk){
    
        
        return 0;
-   }
-
-
+   }*/
+    ///bech n3abiu combobox group by zedneha 5ater ynajem nom yet3aued
+     public ObservableList<String> getAllSponsorname() {
+        List<Sponsor> listSponsor = new ArrayList();
+        ObservableList<String> listSpon =  FXCollections.observableArrayList();
+        try {
+            String req="SELECT nom_societe FROM sponsor GROUP BY nom_societe" ;
+            Statement st = cnx.createStatement(); 
+            ResultSet rs = st.executeQuery(req) ;
+            while(rs.next()) {
+                String NomSp=rs.getString("nom_societe");
+                listSponsor.add(new Sponsor(NomSp));
+                }
+            
+            for (int i = 0; i < listSponsor.size(); i++) {
+               listSpon.add(listSponsor.get(i).getNom_societe());
+            } 
+            System.out.println(listSpon);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return listSpon;  
+    }
    
+//fonction de conversion te5o string ay attribut te5taro w traja3 int
+
+    public int getMdp(String a){
+        int id = 0 ;
+        try {
+            String req="SELECT id_sponsor FROM sponsor WHERE nom_societe = '"+a+"'" ;
+            Statement st = cnx.createStatement(); 
+            ResultSet rs = st.executeQuery(req) ;
+            
+            while(rs.next()) {
+                 id=rs.getInt("id_sponsor");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return id;  
+    }
+
     
 
     

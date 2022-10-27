@@ -7,6 +7,10 @@ package GUI;
 
 import Model.Evmodl;
 import Model.MyListener;
+import com.google.zxing.WriterException;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -14,6 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,6 +65,8 @@ public class AcClientController implements Initializable {
     private Button participer;
     @FXML
     private Button exEV;
+    @FXML
+    private Button qr;
     
     /********************************************************/
     private List<Evmodl> getData(){
@@ -193,7 +200,9 @@ public class AcClientController implements Initializable {
             }
 
             
-           
+        
+        
+         
         }
     /**************************************************/
     @FXML
@@ -206,6 +215,15 @@ public class AcClientController implements Initializable {
     private void exitEVENT(ActionEvent event) {
     }
     /******************************************************************/
+    @FXML
+    private void GoQR(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/QRcodepic.fxml")) ;
+        Scene rcScene= new Scene(root);
+        Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
+    	window.setScene(rcScene);
+    	window.show();
+    }
+    
     
 }    
     

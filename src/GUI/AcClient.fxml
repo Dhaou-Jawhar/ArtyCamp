@@ -43,7 +43,7 @@
                         <Pane prefHeight="38.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <VBox fx:id="chosenEventCard" alignment="CENTER" prefHeight="566.0" prefWidth="335.0" styleClass="chosen-evet-card" stylesheets="@../SCSS/fxml.css">
+                  <VBox fx:id="chosenEventCard" alignment="CENTER" prefHeight="595.0" prefWidth="335.0" styleClass="chosen-evet-card" stylesheets="@../SCSS/fxml.css">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" />
                      </VBox.margin>
@@ -87,6 +87,23 @@
                         </Button>
                      </children>
                   </VBox>
+                  <Pane prefHeight="99.0" prefWidth="435.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="405.0" text="Pour plus d'infos veuillez consulter notre site web:" textFill="#beacc2">
+                           <font>
+                              <Font name="Bodoni MT" size="19.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="22.0" />
+                           </opaqueInsets>
+                        </Label>
+                        <Button fx:id="qr" layoutX="169.0" layoutY="43.0" mnemonicParsing="false" onAction="#GoQR" prefHeight="28.0" prefWidth="96.0" stylesheets="@../SCSS/fxml.css" text="Cliquez ici">
+                           <font>
+                              <Font name="Bodoni MT" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
                </children>
             </VBox>
          </left>

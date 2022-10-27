@@ -8,10 +8,12 @@ package GUI;
 import Entities.Event;
 import Entities.Sponsor;
 import Services.EventService;
+import Services.SponsorService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -25,6 +27,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -67,13 +70,33 @@ public class ListEventController implements Initializable {
     private Button print;
     @FXML
     private Button chart;
+    @FXML
+    private ComboBox<String> cbevent;
+    @FXML
+    private ComboBox<String> cbsponsor;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
         EventService es = new EventService();
+        SponsorService ss = new SponsorService();
+        
+        ObservableList<String> listevent = FXCollections. observableArrayList(es.getAlleventname());
+        cbevent.setItems(listevent);
+        
+        ObservableList<String> listsponsor = FXCollections. observableArrayList(ss.getAllSponsorname());
+        cbsponsor.setItems(listsponsor);
+        
+        
+        
+        
+        
+        
+        
         
         cnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nomEv"));
         cdesc.setCellValueFactory(new PropertyValueFactory<Event, String>("description"));
@@ -228,26 +251,16 @@ public class ListEventController implements Initializable {
     	window.setScene(rcScene);
     	window.show();
     }
+
+    @FXML
+    private void Affecter(ActionEvent event) {
+        EventService es = new EventService();
+        SponsorService ss =new SponsorService();
+        es.Affecter(new Event (es.getMdp(cbevent.getValue())), new Sponsor(ss.getMdp(cbsponsor.getValue())));
+        System.out.println(cbsponsor.getValue());
+        System.out.println(cbevent.getValue());
+        
+    }
     
     
-    /* private void selectFSponsor(ActionEvent event) {
-        try {
-        
-        Event S = TEvent.getSelectionModel().getSelectedItem();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/ModSponsor.fxml"));
-       
-        Parent root =loader.load();
-        ModSponsorController dpc = loader.getController();
-        dpc.init(S);
-        
-        Scene rcScene= new Scene(root);
-    	Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
-    	window.setScene(rcScene);
-    	window.show();
-        
-        
-        }catch(Exception ex) {
-	 warning.setText("Selectionnez un Sponsor");
-	}
-    }*/
 }

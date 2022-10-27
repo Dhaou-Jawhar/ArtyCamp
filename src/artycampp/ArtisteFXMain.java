@@ -23,7 +23,7 @@ public class ArtisteFXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/AcClient.fxml"));
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/AcClient.fxml"));
        Parent root =loader.load();
        Scene scene = new Scene(root);
        primaryStage.setScene(scene);

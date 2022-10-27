@@ -264,8 +264,37 @@ public class EventService implements IService<Event> {
         
         return listEven;  
     }
+             //chart :nom  de chaque evenment
+        public ObservableList<String> getAlleventname() {
+        List<Event> listEvenement = new ArrayList();
+        ObservableList<String> listEven =  FXCollections.observableArrayList();
+        try {
+            String req="SELECT `nomEv` FROM `event` GROUP BY `nomEv`" ;
+            Statement st = cnx.createStatement(); 
+            ResultSet rs = st.executeQuery(req) ;
+            while(rs.next()) {
+                String NomEv=rs.getString("nomEv");
+                listEvenement.add(new Event(NomEv));
+                }
+          //T7auel mel observaliste li list  
+            for (int i = 0; i < listEvenement.size(); i++) {
+               listEven.add(listEvenement.get(i).getNomEv());
+            } 
+            System.out.println(listEven);
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return listEven;  
+    }
+
+        
+        
+        
+       
      
-     
+     //chart :montante de chaque evenment
      public ObservableList<Integer> getAllEvMont() {
         List<Event> listEvenement = new ArrayList();
         ObservableList<Integer> listEven =  FXCollections.observableArrayList();
@@ -299,8 +328,39 @@ public class EventService implements IService<Event> {
 
 
 
+//Te5o string w traja3 id
 
+     public int getMdp(String a){
+        int id = 0;
+        try {
+            String req="SELECT id FROM event WHERE nomEv = '"+a+"'" ;
+            Statement st = cnx.createStatement(); 
+            ResultSet rs = st.executeQuery(req) ;
+            
+            while(rs.next()) {
+                 id=rs.getInt("id");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return id;  
+    }
+/*
+     **************************************
+     */
+     //fonction t3amer beha table assocatiove ta3teha 7ajtin obet sponsor w objet event eli ne5thouhom mel combobox w mba3ed (ARJO ID MTE3 kol wa7da w simple insertion
+      public void Affecter(Event e,Sponsor s) {
+        try {
+            String req = "INSERT INTO eventsponsor(id,id_sponsor) VALUES ('" + e.getId() + "','" + s.getId_sponsor()+ "')";
 
+            Statement st = cnx.createStatement();
+            st.executeUpdate(req);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    /********************************************************/
 
 
 

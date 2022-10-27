@@ -36,6 +36,11 @@ public class Sponsor {
         this.nom_societe = nom_societe;
         this.email_societe = email_societe;
     }
+    
+    public Sponsor(String nom_societe) {
+       
+        this.nom_societe = nom_societe;
+    }
 
     public Sponsor(int id_sponsor) {
         this.id_sponsor = id_sponsor; 

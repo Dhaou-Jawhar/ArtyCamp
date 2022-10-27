@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Entities.Event;
 import Entities.Sponsor;
 import Services.SponsorService;
 import java.io.IOException;
@@ -134,5 +135,9 @@ public class ModSponsorController implements Initializable {
             window.setScene(rcScene);
             window.show();
     }  
+
+    void init(Event S) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
