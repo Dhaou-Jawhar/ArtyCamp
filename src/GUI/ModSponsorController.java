@@ -10,6 +10,7 @@ import Services.SponsorService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,6 +64,24 @@ public class ModSponsorController implements Initializable {
         chemail.setText(S.getEmail_societe());
     }
 
+     /********************************************************/
+    @FXML
+    public boolean validateEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            return false;
+        }
+        //^ : it starts with
+        //+ : at least one
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +"[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        if (pattern.matcher(email).matches()) {
+            return true;
+        } 
+        return false;
+    }
+    
+    
+    
     /********************************************************/
     @FXML
     private void modifier(ActionEvent event) {
@@ -71,6 +90,17 @@ public class ModSponsorController implements Initializable {
             try {
             System.out.println(Integer.parseInt(chtel.getText()));
             SponsorService s = new SponsorService();
+            
+            boolean isValid = validateEmail(chemail.getText());
+            if(!isValid)
+            {
+            warning.setText("Email non valide");
+
+                
+            }else {
+            
+            
+            
             s.modifier(new Sponsor(ID,Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
             //JOptionPane.showMessageDialog(null,"Sponsor modifié avec succés");
             TrayNotification tray = new TrayNotification();
@@ -86,11 +116,12 @@ public class ModSponsorController implements Initializable {
             Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
             window.setScene(rcScene);
             window.show();
+            }
             }catch(Exception e){
-                 warning.setText("Doit etre de type entier");
+                 warning.setText("Num° Tél doit etre de type entier");
                 }
             }catch(Exception e){
-         warning.setText("Doit etre de type entier");
+         warning.setText("Montant doit etre de type entier");
             }
     }
     

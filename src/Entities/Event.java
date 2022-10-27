@@ -37,6 +37,10 @@ public class Event {
         this.dateDeb = dateDeb;
         this.dateFin = dateFin;
     }
+     
+     public Event(String nomEv) {
+        this.nomEv = nomEv;
+    }
 
     @Override
     public String toString() {

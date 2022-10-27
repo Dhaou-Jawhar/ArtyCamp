@@ -235,4 +235,78 @@ public class EventService implements IService<Event> {
             return ls;
             
         }
+
+
+
+
+
+
+        public ObservableList<String> getAllEvTitle() {
+        List<Event> listEvenement = new ArrayList();
+        ObservableList<String> listEven =  FXCollections.observableArrayList();
+        try {
+            String req="SELECT nomEv FROM event JOIN eventsponsor ON event.id = eventsponsor.id JOIN sponsor ON eventsponsor.id_sponsor = sponsor.id_sponsor GROUP by event.id;" ;
+            Statement st = cnx.createStatement(); 
+            ResultSet rs = st.executeQuery(req) ;
+            while(rs.next()) {
+                String NomEv=rs.getString("NomEv");
+                listEvenement.add(new Event(NomEv));
+                }
+            
+            for (int i = 0; i < listEvenement.size(); i++) {
+               listEven.add(listEvenement.get(i).getNomEv());
+            } 
+            //System.out.println(listEven);
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return listEven;  
+    }
+     
+     
+     public ObservableList<Integer> getAllEvMont() {
+        List<Event> listEvenement = new ArrayList();
+        ObservableList<Integer> listEven =  FXCollections.observableArrayList();
+        try {
+            String req="SELECT SUM(montant) as somme FROM event JOIN eventsponsor ON event.id = eventsponsor.id JOIN sponsor ON eventsponsor.id_sponsor = sponsor.id_sponsor GROUP by event.id;" ;
+            Statement st = cnx.createStatement(); 
+            ResultSet rs = st.executeQuery(req) ;
+            while(rs.next()) {
+                Integer Montant=rs.getInt("somme");
+                listEvenement.add(new Event(Montant));
+            }
+            
+            for (int i = 0; i < listEvenement.size(); i++) {
+               listEven.add(listEvenement.get(i).getId());
+            } 
+         //  System.out.println(listEven);
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return listEven;  
+    }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

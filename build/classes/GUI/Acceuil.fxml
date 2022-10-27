@@ -31,7 +31,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Label layoutX="353.0" layoutY="28.0" prefHeight="115.0" prefWidth="411.0" text="Gestion d'Evénment" textFill="#905e96">
+      <Label layoutX="353.0" layoutY="28.0" prefHeight="115.0" prefWidth="411.0" text="Gestion d'Evénement" textFill="#905e96">
          <font>
             <Font name="Sitka Small Bold" size="35.0" />
          </font>

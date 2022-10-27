@@ -75,7 +75,6 @@ public class AjSponsorController implements Initializable {
     }
     
     /********************************************************/
-    @FXML
     public boolean validateEmail(String email) {
         if (email == null || email.isEmpty()) {
             return false;
@@ -89,6 +88,12 @@ public class AjSponsorController implements Initializable {
         } 
         return false;
     }
+    /********************************************************/
+    
+    
+    
+    
+    
 
     /********************************************************/
     @FXML
@@ -106,9 +111,7 @@ public class AjSponsorController implements Initializable {
             if(!isValid)
             {
             warning.setText("Email non valide");
-
-                //throw new Exception("Email non valide");
-            }
+            }else {
             s.ajouter(new Sponsor(Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
             //JOptionPane.showMessageDialog(null,"Sponsor ajouté avec succés");
             TrayNotification tray = new TrayNotification();
@@ -124,21 +127,15 @@ public class AjSponsorController implements Initializable {
             Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
             window.setScene(rcScene);
             window.show();
+            }
             }catch(Exception e){
-                 warning.setText("Doit etre de type entier");
+                 warning.setText("Num° Tél doit etre de type entier");
                 }
             }catch(Exception e){
-         warning.setText("Doit etre de type entier");
+         warning.setText("Montant doit etre de type entier");
             }
     }
-  }
-
-    @FXML
-    private void ajoutEv(ActionEvent event) {
-    }
-
-   
-    
+  }    
 }
     
     

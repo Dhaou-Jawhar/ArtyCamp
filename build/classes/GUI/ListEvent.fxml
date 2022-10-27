@@ -21,7 +21,7 @@
             <TableColumn fx:id="cff" prefWidth="177.0" text="Date Fin" />
          </columns>
       </TableView>
-      <Button layoutX="748.0" layoutY="410.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="89.0" styleClass="UpperMenu" stylesheets="@../SCSS/fxml.css" text="Modifier" textFill="#4b2951">
+      <Button layoutX="747.0" layoutY="410.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="96.0" styleClass="UpperMenu" stylesheets="@../SCSS/fxml.css" text="Modifier" textFill="#4b2951">
          <font>
             <Font name="Bodoni MT" size="15.0" />
          </font></Button>
@@ -34,7 +34,7 @@
             <Font name="Bodoni MT" size="16.0" />
          </font></Button>
       <Label fx:id="warning" layoutX="687.0" layoutY="378.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
-      <Button fx:id="goacc" layoutX="756.0" layoutY="483.0" mnemonicParsing="false" onAction="#Goback" prefHeight="31.0" prefWidth="70.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951">
+      <Button fx:id="goacc" layoutX="944.0" layoutY="480.0" mnemonicParsing="false" onAction="#Goback" prefHeight="33.0" prefWidth="96.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951">
          <font>
             <Font name="Bodoni MT" size="17.0" />
          </font></Button>
@@ -66,5 +66,15 @@
             <Image url="@../SCSS/calcul.png" />
          </image>
       </ImageView>
+      <Button fx:id="print" layoutX="751.0" layoutY="480.0" mnemonicParsing="false" onAction="#imprimer" prefHeight="33.0" prefWidth="105.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Imprimer" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="chart" layoutX="548.0" layoutY="480.0" mnemonicParsing="false" onAction="#GoToChart" prefHeight="33.0" prefWidth="105.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Chart" textFill="#4b2951">
+         <font>
+            <Font name="Bodoni MT" size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

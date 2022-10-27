@@ -6,9 +6,11 @@
 package GUI;
 
 import Entities.Event;
+import Entities.Sponsor;
 import Services.EventService;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -17,6 +19,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.Printer;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -59,6 +63,10 @@ public class ListEventController implements Initializable {
     private TextField rechev;
     @FXML
     private Label empty;
+    @FXML
+    private Button print;
+    @FXML
+    private Button chart;
 
     /**
      * Initializes the controller class.
@@ -185,8 +193,61 @@ public class ListEventController implements Initializable {
     	window.show();
     }
     
+    /********************************************************/
     public void setLblsomme(String empty){
       this.empty.setText(empty);
     }
 
+    
+    
+    @FXML
+    private void imprimer(ActionEvent event) {
+        Printer printer = Printer.getDefaultPrinter();
+        
+    PrinterJob job = PrinterJob.createPrinterJob();
+    if (job != null) {
+        boolean success = job.printPage(TEvent);
+        if (success) {
+            job.endJob();
+       }
+        TrayNotification tray = new TrayNotification();
+              AnimationType type = AnimationType.POPUP;
+              tray.setAnimationType(type);
+              tray.setTitle("Confirmation");
+              tray.setMessage("Tableau d'évenement en cours d'impression...");
+              tray.setNotificationType(NotificationType.SUCCESS);
+              tray.showAndDismiss(Duration.millis(3000));
+    }
+  }
+
+    @FXML
+    private void GoToChart(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/Chart.fxml")) ;
+        Scene rcScene= new Scene(root);
+        Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
+    	window.setScene(rcScene);
+    	window.show();
+    }
+    
+    
+    /* private void selectFSponsor(ActionEvent event) {
+        try {
+        
+        Event S = TEvent.getSelectionModel().getSelectedItem();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/ModSponsor.fxml"));
+       
+        Parent root =loader.load();
+        ModSponsorController dpc = loader.getController();
+        dpc.init(S);
+        
+        Scene rcScene= new Scene(root);
+    	Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
+    	window.setScene(rcScene);
+    	window.show();
+        
+        
+        }catch(Exception ex) {
+	 warning.setText("Selectionnez un Sponsor");
+	}
+    }*/
 }
