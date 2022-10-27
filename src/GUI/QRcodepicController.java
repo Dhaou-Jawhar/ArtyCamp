@@ -12,14 +12,22 @@ import com.google.zxing.qrcode.QRCodeWriter;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,6 +38,8 @@ public class QRcodepicController implements Initializable {
 
     @FXML
     private ImageView qrcode;
+    @FXML
+    private Button arjaa;
 
     /**
      * Initializes the controller class.
@@ -66,5 +76,15 @@ public class QRcodepicController implements Initializable {
         }
          
     }    
+
+    @FXML
+    private void BacktoAcc(ActionEvent event) throws IOException {
+        
+       Parent root = FXMLLoader.load(getClass().getResource("../GUI/AcClient.fxml")) ;
+            Scene rcScene= new Scene(root);
+            Stage window= (Stage)((Node)event.getSource()) .getScene().getWindow();
+            window.setScene(rcScene);
+            window.show();
+    }
     
 }

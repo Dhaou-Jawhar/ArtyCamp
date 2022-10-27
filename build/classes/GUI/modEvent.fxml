@@ -15,8 +15,14 @@
    <children>
       <Pane prefHeight="603.0" prefWidth="603.0" style="-fx-background-color: #FFFAF0;">
          <children>
-            <Button layoutX="247.0" layoutY="482.0" mnemonicParsing="false" onAction="#modifEv" prefHeight="39.0" prefWidth="115.0" stylesheets="@../SCSS/fxml.css" text="Modifier" textFill="#4b2951" />
-            <Button layoutX="421.0" layoutY="482.0" mnemonicParsing="false" onAction="#Exit" prefHeight="39.0" prefWidth="115.0" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951" />
+            <Button layoutX="247.0" layoutY="482.0" mnemonicParsing="false" onAction="#modifEv" prefHeight="39.0" prefWidth="115.0" stylesheets="@../SCSS/fxml.css" text="Modifier" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font></Button>
+            <Button layoutX="421.0" layoutY="482.0" mnemonicParsing="false" onAction="#Exit" prefHeight="39.0" prefWidth="115.0" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font></Button>
             <TextField fx:id="chdd" layoutX="275.0" layoutY="346.0" prefHeight="31.0" prefWidth="216.0" stylesheets="@../SCSS/fxml.css">
                <styleClass>
                   <String fx:value="search-box1" />

@@ -33,8 +33,14 @@
             <TextField fx:id="chemail" layoutX="333.0" layoutY="212.0" styleClass="search-box2" />
             <TextField fx:id="chtel" layoutX="333.0" layoutY="278.0" styleClass="search-box2" />
             <TextField fx:id="chmont" layoutX="333.0" layoutY="347.0" styleClass="search-box2" stylesheets="@../SCSS/fxml.css" />
-            <Button layoutX="246.0" layoutY="465.0" mnemonicParsing="false" onAction="#modifier" prefHeight="42.0" prefWidth="96.0" text="Modifier" textFill="#4b2951" />
-            <Button layoutX="407.0" layoutY="465.0" mnemonicParsing="false" onAction="#exit" prefHeight="42.0" prefWidth="96.0" text="Exit" textFill="#4b2951" />
+            <Button layoutX="246.0" layoutY="465.0" mnemonicParsing="false" onAction="#modifier" prefHeight="42.0" prefWidth="96.0" text="Modifier" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font></Button>
+            <Button layoutX="407.0" layoutY="465.0" mnemonicParsing="false" onAction="#exit" prefHeight="42.0" prefWidth="96.0" text="Exit" textFill="#4b2951">
+               <font>
+                  <Font name="Bodoni MT" size="21.0" />
+               </font></Button>
             <Label fx:id="warning" layoutX="296.0" layoutY="416.0" prefHeight="21.0" prefWidth="159.0" />
             <Pane prefHeight="602.0" prefWidth="105.0" style="-fx-background-color: #905E96;" />
             <ImageView fitHeight="49.0" fitWidth="50.0" layoutX="127.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">

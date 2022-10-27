@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.ChartController">
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ChartController">
    <children>
-      <Pane fx:id="chart" prefHeight="400.0" prefWidth="600.0" />
+      <Pane fx:id="chart" prefHeight="529.0" prefWidth="734.0" style="-fx-background-color: #FFFAF0;">
+         <children>
+            <Pane prefHeight="529.0" prefWidth="137.0" style="-fx-background-color: #905E96;" />
+            <PieChart layoutX="297.0" layoutY="53.0" prefHeight="400.0" prefWidth="335.0" />
+            <Button fx:id="bye" layoutX="624.0" layoutY="464.0" mnemonicParsing="false" onAction="#ExitChart" prefHeight="31.0" prefWidth="64.0" stylesheets="@../SCSS/fxml.css" text="Exit">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Button>
+         </children></Pane>
    </children>
 </AnchorPane>

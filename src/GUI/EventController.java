@@ -60,6 +60,8 @@ public class EventController implements Initializable {
     private void ajoutEv(ActionEvent event) throws IOException {
         if(chnom.getText().isEmpty() || chdesc.getText().isEmpty()|| chdd1.getValue().toString().isEmpty()|| chdf1.getValue().toString().isEmpty())
     {warning.setText("Remplissez tous les champs !!");
+    }else if(chdd1.getValue().isAfter(chdf1.getValue())){
+        warning.setText("Ya sakhta date debut ma tjish baaed date fin !!");
     }else{
          EventService s = new EventService();
 

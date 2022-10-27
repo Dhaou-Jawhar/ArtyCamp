@@ -49,7 +49,7 @@
                   <Font name="Bodoni MT" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="warning" layoutX="331.0" layoutY="358.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
+            <Label fx:id="warning" layoutX="251.0" layoutY="358.0" prefHeight="21.0" prefWidth="332.0" textFill="RED" />
             <Label layoutX="196.0" layoutY="225.0" text="Téléphone:" textFill="#4b2951">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
@@ -89,6 +89,9 @@
                   <Image url="@../SCSS/money.png" />
                </image>
             </ImageView>
+            <Label fx:id="warning1" layoutX="284.0" layoutY="115.0" prefHeight="21.0" prefWidth="316.0" textFill="RED" />
+            <Label fx:id="warning2" layoutX="268.0" layoutY="184.0" prefHeight="21.0" prefWidth="316.0" textFill="RED" />
+            <Label fx:id="warning3" layoutX="273.0" layoutY="265.0" prefHeight="21.0" prefWidth="310.0" textFill="RED" />
          </children>
       </Pane>
    </children>

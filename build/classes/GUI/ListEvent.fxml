@@ -24,15 +24,15 @@
       </TableView>
       <Button layoutX="747.0" layoutY="410.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="96.0" styleClass="UpperMenu" stylesheets="@../SCSS/fxml.css" text="Modifier" textFill="#4b2951">
          <font>
-            <Font name="Bodoni MT" size="15.0" />
+            <Font name="Bodoni MT" size="18.0" />
          </font></Button>
-      <Button layoutX="938.0" layoutY="410.0" mnemonicParsing="false" onAction="#Delete" prefHeight="37.0" prefWidth="105.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Supprimer" textFill="#4b2951">
+      <Button layoutX="938.0" layoutY="410.0" mnemonicParsing="false" onAction="#Delete" prefHeight="39.0" prefWidth="112.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Supprimer" textFill="#4b2951">
          <font>
-            <Font name="Bodoni MT" size="16.0" />
+            <Font name="Bodoni MT" size="19.0" />
          </font></Button>
       <Button layoutX="552.0" layoutY="410.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="37.0" prefWidth="96.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Ajouter" textFill="#4b2951">
          <font>
-            <Font name="Bodoni MT" size="16.0" />
+            <Font name="Bodoni MT" size="19.0" />
          </font></Button>
       <Label fx:id="warning" layoutX="687.0" layoutY="378.0" prefHeight="21.0" prefWidth="199.0" textFill="RED" />
       <Button fx:id="goacc" layoutX="944.0" layoutY="480.0" mnemonicParsing="false" onAction="#Goback" prefHeight="33.0" prefWidth="96.0" styleClass="btn" stylesheets="@../SCSS/fxml.css" text="Exit" textFill="#4b2951">
@@ -58,9 +58,18 @@
             </ImageView>
             <ComboBox fx:id="cbevent" layoutX="41.0" layoutY="160.0" prefWidth="150.0" />
             <ComboBox fx:id="cbsponsor" layoutX="41.0" layoutY="264.0" prefWidth="150.0" />
-            <Label layoutX="41.0" layoutY="127.0" text="Label" />
-            <Label layoutX="41.0" layoutY="227.0" text="Label" />
-            <Button layoutX="76.0" layoutY="351.0" mnemonicParsing="false" onAction="#Affecter" text="Affecter" />
+            <Label layoutX="41.0" layoutY="127.0" prefHeight="22.0" prefWidth="164.0" text="Liste des événements" textFill="#e4d3b0">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font></Label>
+            <Label layoutX="41.0" layoutY="227.0" prefHeight="21.0" prefWidth="136.0" text="Liste des Sponsors" textFill="#e4d3b0">
+               <font>
+                  <Font name="Bodoni MT" size="17.0" />
+               </font></Label>
+            <Button layoutX="76.0" layoutY="351.0" mnemonicParsing="false" onAction="#Affecter" stylesheets="@../SCSS/fxml.css" text="Affecter">
+               <font>
+                  <Font name="Bodoni MT" size="17.0" />
+               </font></Button>
          </children></Pane>
       <ImageView fitHeight="48.0" fitWidth="47.0" layoutX="872.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>

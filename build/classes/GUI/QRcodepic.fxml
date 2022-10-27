@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.QRcodepicController">
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="486.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.QRcodepicController">
    <children>
-      <ImageView fx:id="qrcode" fitHeight="400.0" fitWidth="600.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="qrcode" fitHeight="376.0" fitWidth="352.0" layoutX="67.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="arjaa" layoutX="211.0" layoutY="423.0" mnemonicParsing="false" onAction="#BacktoAcc" prefHeight="31.0" prefWidth="77.0" stylesheets="@../SCSS/fxml.css" text="Exit">
+         <font>
+            <Font name="Bodoni MT" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -52,6 +52,12 @@ public class AjSponsorController implements Initializable {
     private DatePicker chdd1;
     @FXML
     private DatePicker chdf1;
+    @FXML
+    private Label warning1;
+    @FXML
+    private Label warning2;
+    @FXML
+    private Label warning3;
     
     
 
@@ -110,7 +116,7 @@ public class AjSponsorController implements Initializable {
             boolean isValid = validateEmail(chemail.getText());
             if(!isValid)
             {
-            warning.setText("Email non valide");
+            warning2.setText("Email non valide");
             }else {
             s.ajouter(new Sponsor(Integer.parseInt(chtel.getText()),Integer.parseInt(chmont.getText()),chnom.getText(),chemail.getText()));
             TrayNotification tray = new TrayNotification();
@@ -128,7 +134,7 @@ public class AjSponsorController implements Initializable {
             window.show();
             }
             }catch(Exception e){
-                 warning.setText("Num° Tél doit etre de type entier");
+                 warning3.setText("Num° Tél doit etre de type entier");
                 }
             }catch(Exception e){
          warning.setText("Montant doit etre de type entier");

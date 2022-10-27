@@ -318,16 +318,7 @@ public class EventService implements IService<Event> {
         
         return listEven;  
     }
-     
-
-
-
-
-
-
-
-
-
+    
 //Te5o string w traja3 id
 
      public int getMdp(String a){
@@ -359,14 +350,5 @@ public class EventService implements IService<Event> {
             System.out.println(ex.getMessage());
         }
     }
-
-    /********************************************************/
-
-
-
-
-
-
-
 
 }
