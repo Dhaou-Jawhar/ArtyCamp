@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.artycamp.gui.MessagerieController">
+   <children>
+      <VBox prefHeight="501.0" prefWidth="266.0" style="-fx-background-color: #9643A9;">
+         <children>
+            <Label text="  Messagerie" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="314.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../tools/artycmp.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="50.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="retourmsg" mnemonicParsing="false" onAction="#clickretourmsg" style="-fx-background-color: #694778;" text="Retour" textFill="#fefdff" translateX="10.0" translateY="160.0" />
+            <Button fx:id="suivanthanen" mnemonicParsing="false" onAction="#clicksuihane" style="-fx-background-color: #694778;" text="suivant" textFill="WHITE" translateX="190.0" translateY="130.0" />
+         </children>
+      </VBox>
+      <Button fx:id="actualisermsg" layoutX="578.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickactumsg" style="-fx-background-color: #694778;" text="Actualiser" textFill="#fefdff" />
+      <Label layoutX="281.0" layoutY="267.0" text="expéditeur" />
+      <TextField fx:id="expediteurmsg" layoutX="367.0" layoutY="262.0" />
+      <TextField fx:id="recepteurmsg" layoutX="367.0" layoutY="304.0" />
+      <Label layoutX="285.0" layoutY="309.0" text="récepteur" />
+      <TextArea fx:id="contenumsg" layoutX="367.0" layoutY="350.0" prefHeight="106.0" prefWidth="187.0" />
+      <Label layoutX="288.0" layoutY="382.0" text="message" />
+      <HBox layoutX="296.0" layoutY="-1.0" prefHeight="257.0" prefWidth="380.0">
+         <children>
+            <TableView fx:id="tablemessage" prefHeight="257.0" prefWidth="380.0">
+              <columns>
+                <TableColumn fx:id="idmsg" prefWidth="130.0" text="message" />
+                  <TableColumn fx:id="idvu" prefWidth="62.0" text="Vu" />
+                <TableColumn fx:id="idexp" prefWidth="91.0" text="expediteur" />
+                  <TableColumn fx:id="idrec" prefWidth="89.0" text="récepteur" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <Text fx:id="t_error" layoutX="390.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+      <Button fx:id="supprimermsg" layoutX="576.0" layoutY="460.0" mnemonicParsing="false" onAction="#clicksupmsg" style="-fx-background-color: #694778;" text="Supprimer" textFill="#fefdff" />
+      <Button fx:id="ajoutermsg" layoutX="296.0" layoutY="459.0" mnemonicParsing="false" onAction="#clickajoutmsg" style="-fx-background-color: #694778;" text="Ajouter" textFill="#fefdff" />
+   </children>
+</AnchorPane>
