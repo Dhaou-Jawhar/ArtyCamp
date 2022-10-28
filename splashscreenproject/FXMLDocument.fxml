@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="343.0" prefWidth="369.0" style="-fx-background-color: #905E96;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="splashscreenproject.MainController">
+    <children>
+        <Button fx:id="button" layoutX="113.0" layoutY="253.0" onAction="#handleButtonAction" prefHeight="49.0" prefWidth="138.0" style="-fx-border-radius: 20;" text="Click Me!" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <ImageView fitHeight="198.0" fitWidth="247.0" layoutX="85.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sample.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
