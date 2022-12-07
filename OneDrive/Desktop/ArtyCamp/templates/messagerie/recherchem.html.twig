@@ -1,0 +1,60 @@
+{% extends 'BaseBackFinalM.html.twig' %}
+{% block body %}
+    <h1>Rechercher Messagerie <img  src="{{asset ('mes_rec.png')}}"  alt="logo" width="300" height="200"></h1>
+      <div style="clear:both"></div>
+    <div class="content">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-12 col-md-24">
+    <div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Rechercher <img src="{{asset ('chercheicon.png')}}" alt="logo" width="50" height="50" ></h4>
+        <p class="card-category">{{ 'now'|date('h:i A','Africa/Tunis') }}</p>
+    </div>
+    <div class="card-body table-responsive">
+    <table class="table table-hover" id="t">
+        <thead class="text-warning">
+
+        <tr>
+
+            <th>nomrex</th>
+            <th>nomex</th>
+            <th>vu</th>
+            <th>msg</th>
+        </tr>
+        <tbody id="myTable">
+    {%for i in liste %}
+        <tr>
+        <tr>
+            <td>{{i.nomrex}}</td>
+            <td>{{i.nomex}}</td>
+            <td>{{i.vu}}</td>
+            <td>{{i.msg}}</td>
+
+        </tr>
+    {%endfor%}
+</table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+{% endblock %}

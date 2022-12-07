@@ -1,0 +1,54 @@
+{% extends 'BaseFrontFinal.html.twig' %}
+{% block body %}
+    <td><a href="{{ path('read_messagerie') }}" ><button class="btn" style="background-color: #AA4ECD">Acceuil</button></a></td>
+    <h1 class="card-title" , style="text-align: center">Ajouter Messagerie </h1>
+    <p class="card-category"  style="text-align: center">{{ 'now'|date('h:i A','Africa/Tunis') }}</p>
+    {{ form_start(f,{'attr': {'novalidate': 'novalidate'}}) }}
+<div class="main-panel">
+    <p style="float:right">
+    <div style="clear:both"></div>
+    <div class="content">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-12 col-md-24">
+    <div class="card">
+    <div class="card-body table-responsive">
+    <table class="table table-hover">
+        <thead class="text-warning">
+        <tr>
+            <td><h4 style="color: #AA4ECD;"> {{ form_label(f.nomrex,"Récepteur") }} </h4></td>
+            <td> {{ form_widget(f.nomrex) }} </td>
+            <td> {{ form_errors(f.nomrex) }} </td>
+        </tr>
+        <tr>
+            <td> <h4 style="color: #AA4ECD;">{{ form_label(f.nomex,"Expéditeur") }} </h4></td>
+            <td> {{ form_widget(f.nomex) }} </td>
+            <td> {{ form_errors(f.nomex) }} </td>
+        </tr>
+       <tr>
+            <td><h4 style="color: #AA4ECD;"> {{ form_label(f.vu,"vu") }} </h4></td>
+            <td> {{ form_widget(f.vu) }} </td>
+            <td> {{ form_errors(f.vu) }} </td>
+        </tr>
+        <tr>
+            <td> <h4 style="color: #AA4ECD;">{{ form_label(f.msg,"Message") }}</h4> </td>
+            <td> {{ form_widget(f.msg) }} </td>
+            <td> {{ form_errors(f.msg) }} </td>
+        </tr>
+    </table>
+    {{ form_end(f)}}
+        <td><a href="{{ path('add_messagerie') }}" ><button class="btn" style="background-color: #AA4ECD">Enregistrer</button></a></td>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
