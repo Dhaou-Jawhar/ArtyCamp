@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="599.0" style="-fx-background-color: #47234D;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.artycamp.gui.AffichageReclamationController">
+   <children>
+      <TableView fx:id="TableafficheRec" layoutX="-1.0" layoutY="3.0" prefHeight="226.0" prefWidth="394.0">
+        <columns>
+          <TableColumn fx:id="id_Date" prefWidth="113.0" text="Date" />
+          <TableColumn fx:id="id_Msg" prefWidth="124.0" text="msg" />
+            <TableColumn fx:id="id_Object" prefWidth="95.0" text="object" />
+            <TableColumn fx:id="id_IdU" prefWidth="54.0" text="User" />
+        </columns>
+      </TableView>
+      <Label layoutX="450.0" layoutY="242.0" text="Message" textFill="WHITE" />
+      <TextField fx:id="textidreclamation" layoutX="152.0" layoutY="272.0" />
+      <TextField fx:id="iduserreclamation" layoutX="152.0" layoutY="317.0" />
+      <Label layoutX="66.0" layoutY="322.0" text="User" textFill="WHITE" />
+      <Button fx:id="suprimerreclam" layoutX="268.0" layoutY="355.0" mnemonicParsing="false" onAction="#cliksuprimerrecla" style="-fx-border-color: #D0CAD1; -fx-background-color: #6E4875; -fx-border-radius: 10;" text="suprimer" textFill="WHITE" />
+      <Button fx:id="enregistrerreclam" layoutX="38.0" layoutY="355.0" mnemonicParsing="false" onAction="#clikenregistrerrecla" style="-fx-background-color: #6E4875; -fx-border-color: #D0CAD1; -fx-border-radius: 10;" text="Enregistrer" textFill="WHITE" />
+      <TextArea fx:id="textcontenureclamation" layoutX="386.0" layoutY="268.0" prefHeight="109.0" prefWidth="200.0" />
+      <Label layoutX="63.0" layoutY="277.0" text="Object" textFill="WHITE" />
+      <Button fx:id="modifierrecla" layoutX="400.0" layoutY="185.0" mnemonicParsing="false" onAction="#clickmodifierrecla" style="-fx-border-color: #D0CAD1; -fx-border-radius: 10; -fx-background-color: #6E4875;" text="Modifier" textFill="WHITE" />
+      <Button fx:id="retourajoutereclam" layoutX="516.0" layoutY="40.0" mnemonicParsing="false" onAction="#clikretourreclamation" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #6E4875; -fx-border-color: #D0CAD1; -fx-border-radius: 10;" text="Retour" textFill="WHITE" />
+      <Button fx:id="actualiser" layoutX="508.0" layoutY="86.0" mnemonicParsing="false" onAction="#actualiserclik" style="-fx-border-color: #D0CAD1; -fx-border-radius: 10; -fx-background-color: #6E4875;" text="actualiser" textFill="WHITE" />
+      <Button fx:id="idAjouter" layoutX="514.0" layoutY="185.0" mnemonicParsing="false" onAction="#clickajouter" style="-fx-background-color: #6E4875; -fx-border-radius: 10; -fx-border-color: #D0CAD1;" text="Ajouter" textFill="WHITE" />
+      <Text fx:id="t_error" fill="WHITE" layoutX="139.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="187.00000047683716" />
+      <VBox layoutX="605.0" layoutY="-7.0" prefHeight="410.0" prefWidth="252.0" style="-fx-background-color: #9643A9;">
+         <children>
+            <Label text="  Reclamation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="35.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="202.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="80.0">
+               <image>
+                  <Image url="@../tools/artycmp.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="51.0" translateX="200.0" translateY="100.0">
+               <image>
+                  <Image url="@../../../../../../../../AppData/Local/Temp/icons8_resume_button_64px.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="suivantrecla" mnemonicParsing="false" onAction="#clicksuirecla" style="-fx-background-color: #6E4875; -fx-border-radius: 10; -fx-border-color: #D0CAD1;" text="Suivant" textFill="WHITE" translateX="130.0" translateY="65.0" />
+         </children>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
