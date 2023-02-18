@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="411.0" prefWidth="843.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Arty.Gui.FXMLAfficheController">
+   <children>
+      <TableView fx:id="Affichetable" layoutX="39.0" layoutY="44.0" prefHeight="323.0" prefWidth="765.0">
+        <columns>
+          <TableColumn fx:id="idartCol" prefWidth="117.0" text="idArt" />
+          <TableColumn fx:id="nomCol" prefWidth="168.0" text="Nom" />
+            <TableColumn fx:id="descCol" prefWidth="170.0" text="Desc" />
+            <TableColumn fx:id="refCol" prefWidth="148.0" text="Ref" />
+            <TableColumn fx:id="idcatCol" prefWidth="161.0" text="idCateg" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
